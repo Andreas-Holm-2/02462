@@ -324,10 +324,9 @@ n_features = dummy_output.shape[1]
 CNN_model = VGG16(num_classes=10, in_channels=in_channels, features_fore_linear=n_features, dataset=test_set)
 
 # Load VGG16 pre-trained weights
-CNN_model = get_vgg_weights(CNN_model)
 
 # Train model
-train_epochs = 5
+train_epochs = 10
 train_accs, test_accs = CNN_model.train_model(train_dataloader, epochs=train_epochs, val_dataloader=test_dataloader)
 
 with open('train_accs.pkl', 'wb') as f:
