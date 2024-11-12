@@ -14,7 +14,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 from torchsummary import summary
-
 import utils
 
 # Check if you have cuda available, and use if you do
