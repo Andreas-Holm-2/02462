@@ -30,4 +30,4 @@
 nvidia-smi
 # Load the cuda module
 module load cuda/12.4.1
-/zhome/eb/6/205174/Drev/.venv/bin/python /zhome/eb/6/205174/Drev/assignment_0.7drop.py
+/zhome/a1/d/206133/02462/02462/.venv/bin/python /zhome/a1/d/206133/02462/02462/vgg16d.py
