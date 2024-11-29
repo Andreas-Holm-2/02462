@@ -216,8 +216,10 @@ class VGG16(torch.nn.Module):
             epoch_acc = 0
 
             for inputs, targets in tqdm(train_dataloader):
+                inputs, targets = inputs.to(device), targets.to(device)  # Fix here
                 logits = self(inputs)
                 loss = self.criterion(logits, targets)
+
                 loss.backward()
 
                 self.optim.step()
@@ -322,6 +324,7 @@ n_features = dummy_output.shape[1]
 
 # Initialize model
 CNN_model = VGG16(num_classes=10, in_channels=in_channels, features_fore_linear=n_features, dataset=test_set)
+CNN_model.to(device)  # Move model to the GPU
 
 # Load VGG16 pre-trained weights
 
