@@ -446,14 +446,16 @@ CNN_model = VGG16(num_classes=10, in_channels=in_channels)
 # WARNING - THIS PART MIGHT BREAK
 features_fore_linear = utils.get_dim_before_first_linear(CNN_model.features, in_width_height, in_channels, brain=True)
 
-dummy_input = torch.randn(1, in_channels, in_width_height, in_width_height).to(device)
+dummy_input = torch.randn(1, in_channels, in_width_height, in_width_height)
+dummy_input = dummy_input.to('cuda')
+
 dummy_output = CNN_model.features(dummy_input)
 n_features = dummy_output.shape[1]
 
 
 # Initialize model
 CNN_model = VGG16(num_classes=10, in_channels=in_channels, features_fore_linear=n_features, dataset=test_set)
-CNN_model.to(device)  # Move model to the GPU
+CNN_model = CNN_model.to('cuda')
 
 # Load VGG16 pre-trained weights
 # CNN_model = get_vgg_weights(CNN_model)
