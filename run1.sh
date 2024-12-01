@@ -30,4 +30,4 @@
 nvidia-smi
 # Load the cuda module
 module load cuda/12.4.1
-/zhome/a1/d/206133/02462/02462/.venv/bin/python /zhome/a1/d/206133/02462/02462/vgg16d.py
+/zhome/a1/d/206133/02462/02462/.venv/bin/python /zhome/a1/d/206133/02462/02462/1_loaded_weights_with_device.py
